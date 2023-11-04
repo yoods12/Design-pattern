@@ -5,11 +5,11 @@ using namespace std;
 class Singleton
 {
 	Singleton() {};
-	//»ı¼ºÀÚ¸¦ privateÀ¸·Î ¼±¾ğÇÏ¿© ¿ÜºÎ¿¡¼­ Á÷Á¢ °´Ã¼¸¦ »ı¼ºÇÒ ¼ö ¾øÀ½
+	//ìƒì„±ìë¥¼ privateìœ¼ë¡œ ì„ ì–¸í•˜ì—¬ ì™¸ë¶€ì—ì„œ ì§ì ‘ ê°ì²´ë¥¼ ìƒì„±í•  ìˆ˜ ì—†ìŒ
 
 	static Singleton* instance;
-	//Singleton ÀÇ °´Ã¼¸¦ °¡¸®Å°´Â instance
-	//static À¸·Î ÇÏ¿© instance´Â ÇÏ³ª¸¸ Á¸Àç ÇÏµµ·Ï ÇÔ
+	//Singleton ì˜ ê°ì²´ë¥¼ ê°€ë¦¬í‚¤ëŠ” instance
+	//static ìœ¼ë¡œ í•˜ì—¬ instanceëŠ” í•˜ë‚˜ë§Œ ì¡´ì¬ í•˜ë„ë¡ í•¨
 
 public:
 	static Singleton* getInstance()
@@ -17,13 +17,13 @@ public:
 		if (instance != nullptr)
 		{
 			return instance; 
-			//instance°¡ »ı¼ºµÇ¾î ÀÖÀ¸¸é ¹İÈ¯
+			//instanceê°€ ìƒì„±ë˜ì–´ ìˆìœ¼ë©´ ë°˜í™˜
 		}
 		else
 		{
 			instance = new Singleton();
 			return instance; 
-			//instance°¡ ¾øÀ¸¸é ¸¸µé°í ¹İÈ¯
+			//instanceê°€ ì—†ìœ¼ë©´ ë§Œë“¤ê³  ë°˜í™˜
 		}
 	}
 };
@@ -32,7 +32,7 @@ Singleton* Singleton::instance = nullptr;
 
 int main()
 {
-	// Singleton a;(x) »ı¼ºÀÚÀÇ Á¢±ÙÁöÁ¤ÀÚ°¡ privateÀÓ
+	// Singleton a;(x) ìƒì„±ìì˜ ì ‘ê·¼ì§€ì •ìê°€ privateì„
 
 	Singleton* a = Singleton::getInstance();
 	Singleton* b = Singleton::getInstance();
